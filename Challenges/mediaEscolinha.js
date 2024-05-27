@@ -13,8 +13,6 @@ const aluno = {
     }
 };
 
-
-
 // evitamos diversos if e else ifs pra cada materia com objeto usando um metodo de chave dinamica que consegui pensar por mim mesmo o.O estaria os estudos dando resultados
 while(true){
     console.log("Opcoes do programa: Portugues | Matematica | Ciencias | Historia | Sair \n")
