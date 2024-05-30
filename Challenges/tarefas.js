@@ -77,12 +77,9 @@ while(true){
     
         }else if(escolha === 4){
 
-            //percorrendo array e mostrando no console
-            for(let tarefa of tarefas){
+            //chamando nossa funcao de exibir
 
-                console.log(tarefa);
-
-            }
+            exibirTarefas()
     
         }else if(escolha === 5){
             //bye bye 
@@ -118,4 +115,20 @@ function excluirTarefas(id){
 
 function concluirTarefa(id){
     tarefas[id].concluida = true;
+}
+
+function exibirTarefas() {
+    console.log("Lista de Tarefas:");
+    if (tarefas.length === 0) {
+        console.log("Nenhuma tarefa encontrada.");
+    } else {
+        tarefas.forEach(tarefa => {
+            console.log("-------------------------");
+            console.log(`ID: ${tarefa.id}`);
+            console.log(`Nome: ${tarefa.nome}`);
+            console.log(`Descrição: ${tarefa.descricao}`);
+            console.log(`Concluída: ${tarefa.concluida ? 'Sim' : 'Não'}`);
+            console.log("-------------------------");
+        });
+    }
 }
