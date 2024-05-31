@@ -1,13 +1,14 @@
 const fs = require('fs');
 const prompt = require("prompt-sync")({ sigint: true }); 
 
-let usuarios = [{id: 0, nome: 'jose', email: 'smth@mgail.com', idade: 22}];
+let usuarios = [];
 
 // Função para carregar usuários de um arquivo JSON
 function carregarUsuarios() {
     if (fs.existsSync('usuarios.json')) {
         const data = fs.readFileSync('usuarios.json', 'utf8');
         usuarios = JSON.parse(data);
+        console.log("Usuarios carregados com sucesso.");
     }
 }
 
@@ -15,6 +16,7 @@ function carregarUsuarios() {
 function salvarUsuarios() {
     const data = JSON.stringify(usuarios, null, 2);
     fs.writeFileSync('usuarios.json', data);
+    console.log("Usuarios exportados com sucesso para 'usuarios.json'");
 }
 
 // Funcao para adicionar usuario na lista de usuarios
@@ -40,6 +42,7 @@ function removerUsuario(){
         }
     }
     usuarios.splice(indice, 1);
+    console.log("Usuario removido com sucesso! ");
 }
 
 // Funcao atualizar usuario na lista
@@ -66,14 +69,20 @@ function atualizarUsuario(){
     
     const propASerAlterada = parseInt(prompt("Digite sua opcao: "));
 
-    if(propASerAlterada === 1){usuario.nome = prompt("Digite o novo nome: ")};
-    if(propASerAlterada === 2){usuario.email = prompt("Digite o novo email: ")};
-    if(propASerAlterada === 3){usuario.idade = parseInt(prompt("Digite a nova idade: "))};
-    console.log("Usuario atualizado com sucesso.");
-    if(propASerAlterada === 4){return};
-
-    
-
+    if(propASerAlterada === 1){
+        usuario.nome = prompt("Digite o novo nome: ");
+        console.log(`Nome do usuario alterado para ${usuario.nome}`);
+    }else if(propASerAlterada === 2){
+        usuario.email = prompt("Digite o novo email: ");
+        console.log(`Email do usuario alterado para ${usuario.email}`);
+    }else if(propASerAlterada === 3){
+        usuario.idade = parseInt(prompt("Digite a nova idade: "));
+        console.log(`Idade do usuario alterada para ${usuario.idade}`);
+    }else if(propASerAlterada === 4){
+        return;
+    }else{
+        console.log("Opcao invalida! ");
+    }
 }
 
 // Funcao para exibir usuarios 
