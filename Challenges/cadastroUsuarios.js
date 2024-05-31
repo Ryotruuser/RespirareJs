@@ -1,11 +1,7 @@
 const fs = require('fs');
 const prompt = require("prompt-sync")({ sigint: true }); 
 
-let usuarios = [
-    { id: 0, nome: 'aaa', email: 'aa', idade: 22 },
-    { id: 1, nome: 'bbb', email: 'bb', idade: 33 }
-
-];
+let usuarios = [{id: 0, nome: 'jose', email: 'smth@mgail.com', idade: 22}];
 
 // Função para carregar usuários de um arquivo JSON
 function carregarUsuarios() {
@@ -36,7 +32,14 @@ function adicionarUsuario(){
 // Funcao para remover usuario da lista usuarios
 function removerUsuario(){
     const id = parseInt(prompt("Digite o id do usuario a ser removido: "));
-    usuarios.splice(id, 1);
+    let usuario;
+    let indice = usuarios.indexOf(usuario);
+    for(usuario of usuarios){
+        if(usuario.id === id){
+            usuario = usuario;
+        }
+    }
+    usuarios.splice(indice, 1);
 }
 
 // Funcao atualizar usuario na lista
@@ -66,7 +69,10 @@ function atualizarUsuario(){
     if(propASerAlterada === 1){usuario.nome = prompt("Digite o novo nome: ")};
     if(propASerAlterada === 2){usuario.email = prompt("Digite o novo email: ")};
     if(propASerAlterada === 3){usuario.idade = parseInt(prompt("Digite a nova idade: "))};
+    console.log("Usuario atualizado com sucesso.");
     if(propASerAlterada === 4){return};
+
+    
 
 }
 
@@ -82,29 +88,29 @@ function visualizarUsuarios(){
     };
 }
 
-visualizarUsuarios()
-
-
 
 //loop do programa principal
-// while(true){
-//     console.log(`Gerenciador de usuarios`);
-//     console.log(`
-//     --------------------------
-//     [1] Adicionar usuario 
-//     [2] Remover usuario 
-//     [3] Atualizar usuario 
-//     [4] Exibir usuarios 
-//     [5] Exportar usuarios 
-//     [6] Importar Usuarios 
-//     [0] Sair
-//     --------------------------
-//     `)
-//     const opcao = parseInt(prompt("Digite a opcao desejada: "));
-//     if(opcao == 0){
-//         break;
-//     }
+while(true){
+    console.log(`Gerenciador de usuarios`);
+    console.log(`
+    --------------------------
+    [1] Adicionar usuario 
+    [2] Remover usuario 
+    [3] Atualizar usuario 
+    [4] Exibir usuarios 
+    [5] Exportar usuarios 
+    [6] Importar Usuarios 
+    [0] Sair
+    --------------------------
+    `);
 
+    const opcao = parseInt(prompt("Digite a opcao desejada: "));
 
-
-// }
+    if(opcao == 0){ break; }
+    if(opcao == 1){ adicionarUsuario()}
+    if(opcao == 2){ usuarios.length > 0 ? removerUsuario() : console.log("Nao existem usuarios cadastrados"); }
+    if(opcao == 3){ usuarios.length > 0 ? atualizarUsuario() : console.log("Nao existem usuarios cadastrados");}
+    if(opcao == 4){ usuarios.length > 0 ? visualizarUsuarios() : console.log("Nao existem usuarios cadastrados"); }
+    if(opcao == 5){ usuarios.length > 0 ? salvarUsuarios() : console.log("Nao existem usuarios cadastrados");}
+    if(opcao == 6){ carregarUsuarios(); }
+}
