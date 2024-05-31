@@ -32,8 +32,8 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 Para dúvidas ou sugestões, entre em contato:
 
-- Email: [seu-email@exemplo.com](mailto:riionansr@gmail.com)
-- LinkedIn: [Seu LinkedIn](https://www.linkedin.com/in/ryotruuser/)
+- Email: [riionansr@gmail.com](mailto:riionansr@gmail.com)
+- LinkedIn: [Renan Ramos](https://www.linkedin.com/in/ryotruuser/)
 
 ---
 
