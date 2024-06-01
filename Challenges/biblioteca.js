@@ -124,25 +124,27 @@ function atualizarLivro(){
 }
 
 // Funcao para exibir livro 
-function visualizarLivros(disponiveis = false){
+function visualizarLivros(disponiveis = true){
 
-    if(!disponiveis){
+    if(disponiveis){
         for(livro of livros){
-            console.log(`
-            ============================================================
-                               Livros Disponiveis
-            ============================================================
-            ID: ${livro.id}
-            TITULO: ${livro.titulo}
-            AUTOR: ${livro.autor}
-            ANO: ${livro.ano}
-            DISPONIVEL: ${livro.disponivel ? "Disponivel" : "Alugado"}
-            ============================================================
-            `);
-        };
+            if(livro.disponivel){
+                console.log(`
+                ============================================================
+                                Livros Disponiveis
+                ============================================================
+                ID: ${livro.id}
+                TITULO: ${livro.titulo}
+                AUTOR: ${livro.autor}
+                ANO: ${livro.ano}
+                DISPONIVEL: ${livro.disponivel ? "Disponivel" : "Alugado"}
+                ============================================================
+                `);
+            }
+        }; //end for
     }else{
         for(livro of livros){
-            if(livro.disponivel === true){
+            if(livro.disponivel === false){
                 console.log(`
                 ============================================================
                                 Livros Disponiveis
@@ -155,12 +157,9 @@ function visualizarLivros(disponiveis = false){
                 ============================================================
                 `);
             }  
-        };
+        }; //end for
     }
 }
-
-visualizarLivros()
-
 
 //funcao para devolver livro
 function devolverLivro(){
