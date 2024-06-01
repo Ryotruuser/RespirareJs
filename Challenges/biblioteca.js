@@ -92,11 +92,15 @@ function atualizarLivro(){
 function visualizarLivros(){
     for(livro of livros){
         console.log(`
+        ============================================================
+                           Livros Disponiveis
+        ============================================================
         ID: ${livro.id}
         TITULO: ${livro.titulo}
         AUTOR: ${livro.autor}
         ANO: ${livro.ano}
         DISPONIVEL: ${livro.disponivel ? "Disponivel" : "Alugado"}
+        ============================================================
         `);
     };
 }
@@ -113,3 +117,18 @@ function devolverLivro(){
 }
 
 //Funcao alugar livro
+
+function alugarLivro(){
+    visualizarLivros();
+    const livroASerAlugado = parseInt(prompt("ID do livro que deseja alugar: "))
+    for(livro of livros){
+        if(livro.id === livroASerAlugado && livro.disponivel === true){
+            livro.disponivel = false;
+            console.log("Livro alugado com sucesso");
+        }else if(livro.id === livroASerAlugado && livro.disponivel === false){
+            console.log("Titulo indisponivel para aluguel.");
+        }
+    }
+
+
+}
