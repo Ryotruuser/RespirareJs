@@ -44,9 +44,10 @@ while(true){
 function carregarLivros() {
     if (fs.existsSync('livros.json')) {
         const data = fs.readFileSync('livros.json', 'utf8');
-        usuarios = JSON.parse(data);
+        livros = JSON.parse(data);
         console.log("Livros carregados com sucesso.");
     }
+    
 }
 
 // Função para salvar livros em um arquivo JSON
@@ -129,32 +130,33 @@ function visualizarLivros(disponiveis = true){
     if(disponiveis){
         for(livro of livros){
             if(livro.disponivel){
+                nomeLivro = livro.titulo;
                 console.log(`
-                ============================================================
-                                     Livros Disponiveis                                        
-                ============================================================
+                ==========================================================================
+                ${nomeLivro.toUpperCase()}                                       
+                ==========================================================================
                 ID: ${livro.id}
-                TITULO: ${livro.titulo}
                 AUTOR: ${livro.autor}
                 ANO: ${livro.ano}
                 DISPONIVEL: ${livro.disponivel ? "Disponivel" : "Alugado"}
-                ============================================================
+                ===========================================================================
                 `);
             }
         }; //end for
     }else{
         for(livro of livros){
             if(livro.disponivel === false){
+                nomeLivro = livro.titulo;
                 console.log(`
-                ============================================================
-                                      Livros Alugados                                                             
-                ============================================================
+                ==========================================================================
+                ${nomeLivro.toUpperCase()}                                                             
+                ==========================================================================
                 ID: ${livro.id}
                 TITULO: ${livro.titulo}
                 AUTOR: ${livro.autor}
                 ANO: ${livro.ano}
                 DISPONIVEL: ${livro.disponivel ? "Disponivel" : "Alugado"}
-                ============================================================
+                ==========================================================================
                 `);
             }  
         }; //end for
