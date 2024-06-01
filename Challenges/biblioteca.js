@@ -54,7 +54,7 @@ function carregarLivros() {
 function salvarLivros() {
     const data = JSON.stringify(livros, null, 2);
     fs.writeFileSync('livros.json', data);
-    console.log("Livros exportados com sucesso para 'usuarios.json'");
+    console.log("Livros exportados com sucesso para 'livros.json'");
 }
 
 // Funcao para adicionar livro na lista de usuarios
@@ -62,10 +62,10 @@ function adicionarLivro(){
     const id = livros.length ? livros[livros.length - 1].id + 1 : 1;
     const titulo = prompt("Digite o titulo: ");
     const autor = prompt("Digite o autor: ");
-    const ano = parseInt(prompt("Digite o ano da obra: "));
+    const ano = parseInt(prompt("Digite o ano da obra: ")); //adicionar verificador para ver se apenas numero NaN
     const disponivel = true;
 
-    const livro = {id: id, titulo: titulo, autor: autor, ano: ano};
+    const livro = {id: id, titulo: titulo, autor: autor, ano: ano, disponivel};
     livros.push(livro);
     console.log("Livro cadastrado com sucesso.");
 }
@@ -73,55 +73,53 @@ function adicionarLivro(){
 // Funcao para remover livro da lista usuarios
 function removerLivro(){
     const id = parseInt(prompt("Digite o id do livro a ser removido: "));
-    let livro;
-    let indice = livros.indexOf(livro);
-    for(livro of livros){
-        if(livro.id === id){
-            livro = livro;
-        }
+    const indice = livros.findIndex(livro => livro.id === id);
+    if (indice !== -1) {
+        livros.splice(indice, 1);
+        console.log("Livro removido com sucesso! ");
+    } else {
+        console.log("ID do livro nao encontrado.");
     }
-    livros.splice(indice, 1);
-    console.log("Livro removido com sucesso! ");
 }
 
 // Funcao atualizar livro na lista
 function atualizarLivro(){
     const id = parseInt(prompt("Digite o id do livro a ser alterado: "));
-    let livro;
-    for(livro of livros){
-        if(livro.id === id){
-            livro = livro;
+    const livro = livros.find(livro => livro.id === id);
+    if(livro){
+        console.log(`Informacoes atuais: ID: ${livro.id} | TITULO: ${livro.titulo} | AUTOR: ${livro.autor} | ANO: ${livro.ano} | DISPONIVEL: ${livro.disponivel ? "Disponivel" : "Alugado"}`);
+        console.log(`
+        -------------------------------------
+        Digite a propriedade a ser alterada 
+
+        [1] TITULO 
+        [2] AUTOR 
+        [3] ANO
+        [4] SAIR
+        -------------------------------------
+        `);
+        
+        const propASerAlterada = parseInt(prompt("Digite sua opcao: "));
+
+        if(propASerAlterada === 1){
+            livro.titulo = prompt("Digite o novo titulo: ");
+            console.log(`Nome do titulo alterado para ${livro.titulo}`);
+        }else if(propASerAlterada === 2){
+            livro.autor = prompt("Digite o novo Autor: ");
+            console.log(`Autor do livro alterado para ${livro.autor}`);
+        }else if(propASerAlterada === 3){
+            livro.ano = parseInt(prompt("Digite novo ano: "));
+            console.log(`Ano do livro alterado para ${livro.ano}`);
+        }else if(propASerAlterada === 4){
+            return;
+        }else{
+            console.log("Opcao invalida! ");
         }
-    }
-    console.log(`Informacoes atuais: ID: ${livro.id} | TITULO: ${livro.titulo} | AUTOR: ${livro.autor} | ANO: ${livro.ano} | DISPONIVEL: ${livro.disponivel ? "Disponivel" : "Alugado"}`);
 
-    console.log(`
-    -------------------------------------
-    Digite a propriedade a ser alterada 
-
-    [1] TITULO 
-    [2] AUTOR 
-    [3] ANO
-    [4] SAIR
-    -------------------------------------
-    `);
-    
-    const propASerAlterada = parseInt(prompt("Digite sua opcao: "));
-
-    if(propASerAlterada === 1){
-        livro.titulo = prompt("Digite o novo titulo: ");
-        console.log(`Nome do titulo alterado para ${titulo.nome}`);
-    }else if(propASerAlterada === 2){
-        livro.autor = prompt("Digite o novo Autor: ");
-        console.log(`Autor do livro alterado para ${livro.autor}`);
-    }else if(propASerAlterada === 3){
-        livro.ano = parseInt(prompt("Digite novo ano: "));
-        console.log(`Ano do livro alterado para ${livro.ano}`);
-    }else if(propASerAlterada === 4){
-        return;
     }else{
-        console.log("Opcao invalida! ");
+        console.log("ID do livro nao encontrado.");
     }
+    
 }
 
 // Funcao para exibir livro 

@@ -1,212 +1,212 @@
 [
-    {
-        "id": 0,
-        "titulo": "Código Limpo",
-        "autor": "Robert C. Martin",
-        "ano": 2008,
-        "disponivel": true
-    },
-    {
-        "id": 1,
-        "titulo": "O Programador Pragmático",
-        "autor": "Andrew Hunt, David Thomas",
-        "ano": 1999,
-        "disponivel": false
-    },
-    {
-        "id": 2,
-        "titulo": "Introdução aos Algoritmos",
-        "autor": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
-        "ano": 2009,
-        "disponivel": true
-    },
-    {
-        "id": 3,
-        "titulo": "Padrões de Projeto: Soluções Reutilizáveis de Software Orientado a Objetos",
-        "autor": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
-        "ano": 1994,
-        "disponivel": true
-    },
-    {
-        "id": 4,
-        "titulo": "Você Não Conhece JS: Escopos e Closures",
-        "autor": "Kyle Simpson",
-        "ano": 2014,
-        "disponivel": false
-    },
-    {
-        "id": 5,
-        "titulo": "JavaScript: As Boas Partes",
-        "autor": "Douglas Crockford",
-        "ano": 2008,
-        "disponivel": true
-    },
-    {
-        "id": 6,
-        "titulo": "Código Completo",
-        "autor": "Steve McConnell",
-        "ano": 2004,
-        "disponivel": true
-    },
-    {
-        "id": 7,
-        "titulo": "Refatoração: Aperfeiçoando o Design de Códigos Existentes",
-        "autor": "Martin Fowler",
-        "ano": 1999,
-        "disponivel": false
-    },
-    {
-        "id": 8,
-        "titulo": "O Mítico Homem-Mês: Ensaios sobre Engenharia de Software",
-        "autor": "Frederick P. Brooks Jr.",
-        "ano": 1975,
-        "disponivel": true
-    },
-    {
-        "id": 9,
-        "titulo": "Harry Potter e a Pedra Filosofal",
-        "autor": "J.K. Rowling",
-        "ano": 1997,
-        "disponivel": true
-    },
-    {
-        "id": 10,
-        "titulo": "Duna",
-        "autor": "Frank Herbert",
-        "ano": 1965,
-        "disponivel": false
-    },
-    {
-        "id": 11,
-        "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
-        "autor": "J.R.R. Tolkien",
-        "ano": 1954,
-        "disponivel": true
-    },
-    {
-        "id": 12,
-        "titulo": "Neuromancer",
-        "autor": "William Gibson",
-        "ano": 1984,
-        "disponivel": true
-    },
-    {
-        "id": 13,
-        "titulo": "Fundação",
-        "autor": "Isaac Asimov",
-        "ano": 1951,
-        "disponivel": false
-    },
-    {
-        "id": 14,
-        "titulo": "Jogador Número 1",
-        "autor": "Ernest Cline",
-        "ano": 2011,
-        "disponivel": true
-    },
-    {
-        "id": 15,
-        "titulo": "1984",
-        "autor": "George Orwell",
-        "ano": 1949,
-        "disponivel": true
-    },
-    {
-        "id": 16,
-        "titulo": "O Guia do Mochileiro das Galáxias",
-        "autor": "Douglas Adams",
-        "ano": 1979,
-        "disponivel": false
-    },
-    {
-        "id": 17,
-        "titulo": "Snow Crash",
-        "autor": "Neal Stephenson",
-        "ano": 1992,
-        "disponivel": true
-    },
-    {
-        "id": 18,
-        "titulo": "Guerra do Velho",
-        "autor": "John Scalzi",
-        "ano": 2005,
-        "disponivel": true
-    },
-    {
-        "id": 19,
-        "titulo": "O Nome do Vento",
-        "autor": "Patrick Rothfuss",
-        "ano": 2007,
-        "disponivel": false
-    },
-    {
-        "id": 20,
-        "titulo": "A Revolução dos Bichos",
-        "autor": "George Orwell",
-        "ano": 1945,
-        "disponivel": true
-    },
-    {
-        "id": 21,
-        "titulo": "O Ciclo da Fundação",
-        "autor": "Isaac Asimov",
-        "ano": 1953,
-        "disponivel": true
-    },
-    {
-        "id": 22,
-        "titulo": "O Conto da Aia",
-        "autor": "Margaret Atwood",
-        "ano": 1985,
-        "disponivel": true
-    },
-    {
-        "id": 23,
-        "titulo": "O Jogo do Exterminador",
-        "autor": "Orson Scott Card",
-        "ano": 1985,
-        "disponivel": false
-    },
-    {
-        "id": 24,
-        "titulo": "A Máquina do Tempo",
-        "autor": "H.G. Wells",
-        "ano": 1895,
-        "disponivel": true
-    },
-    {
-        "id": 25,
-        "titulo": "A Torre Negra: O Pistoleiro",
-        "autor": "Stephen King",
-        "ano": 1982,
-        "disponivel": true
-    },
-    {
-        "id": 26,
-        "titulo": "O Sol é para Todos",
-        "autor": "Harper Lee",
-        "ano": 1960,
-        "disponivel": false
-    },
-    {
-        "id": 27,
-        "titulo": "A Bússola de Ouro",
-        "autor": "Philip Pullman",
-        "ano": 1995,
-        "disponivel": true
-    },
-    {
-        "id": 28,
-        "titulo": "Coração de Aço",
-        "autor": "Brandon Sanderson",
-        "ano": 2013,
-        "disponivel": true
-    },
-    {
-        "id": 29,
-        "titulo": "Mistborn: O Império Final",
-        "autor": "Brandon Sanderson",
-        "ano": 2006,
-        "disponivel": false
-    }
+  {
+      "id": 0,
+      "titulo": "Código Limpo",
+      "autor": "Robert C. Martin",
+      "ano": 2008,
+      "disponivel": true
+  },
+  {
+      "id": 1,
+      "titulo": "O Programador Pragmático",
+      "autor": "Andrew Hunt, David Thomas",
+      "ano": 1999,
+      "disponivel": false
+  },
+  {
+      "id": 2,
+      "titulo": "Introdução aos Algoritmos",
+      "autor": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
+      "ano": 2009,
+      "disponivel": true
+  },
+  {
+      "id": 3,
+      "titulo": "Padrões de Projeto: Soluções Reutilizáveis de Software Orientado a Objetos",
+      "autor": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+      "ano": 1994,
+      "disponivel": true
+  },
+  {
+      "id": 4,
+      "titulo": "Você Não Conhece JS: Escopos e Closures",
+      "autor": "Kyle Simpson",
+      "ano": 2014,
+      "disponivel": false
+  },
+  {
+      "id": 5,
+      "titulo": "JavaScript: As Boas Partes",
+      "autor": "Douglas Crockford",
+      "ano": 2008,
+      "disponivel": true
+  },
+  {
+      "id": 6,
+      "titulo": "Código Completo",
+      "autor": "Steve McConnell",
+      "ano": 2004,
+      "disponivel": true
+  },
+  {
+      "id": 7,
+      "titulo": "Refatoração: Aperfeiçoando o Design de Códigos Existentes",
+      "autor": "Martin Fowler",
+      "ano": 1999,
+      "disponivel": false
+  },
+  {
+      "id": 8,
+      "titulo": "O Mítico Homem-Mês: Ensaios sobre Engenharia de Software",
+      "autor": "Frederick P. Brooks Jr.",
+      "ano": 1975,
+      "disponivel": true
+  },
+  {
+      "id": 9,
+      "titulo": "Harry Potter e a Pedra Filosofal",
+      "autor": "J.K. Rowling",
+      "ano": 1997,
+      "disponivel": true
+  },
+  {
+      "id": 10,
+      "titulo": "Duna",
+      "autor": "Frank Herbert",
+      "ano": 1965,
+      "disponivel": false
+  },
+  {
+      "id": 11,
+      "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+      "autor": "J.R.R. Tolkien",
+      "ano": 1954,
+      "disponivel": true
+  },
+  {
+      "id": 12,
+      "titulo": "Neuromancer",
+      "autor": "William Gibson",
+      "ano": 1984,
+      "disponivel": true
+  },
+  {
+      "id": 13,
+      "titulo": "Fundação",
+      "autor": "Isaac Asimov",
+      "ano": 1951,
+      "disponivel": false
+  },
+  {
+      "id": 14,
+      "titulo": "Jogador Número 1",
+      "autor": "Ernest Cline",
+      "ano": 2011,
+      "disponivel": true
+  },
+  {
+      "id": 15,
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "ano": 1949,
+      "disponivel": true
+  },
+  {
+      "id": 16,
+      "titulo": "O Guia do Mochileiro das Galáxias",
+      "autor": "Douglas Adams",
+      "ano": 1979,
+      "disponivel": false
+  },
+  {
+      "id": 17,
+      "titulo": "Snow Crash",
+      "autor": "Neal Stephenson",
+      "ano": 1992,
+      "disponivel": true
+  },
+  {
+      "id": 18,
+      "titulo": "Guerra do Velho",
+      "autor": "John Scalzi",
+      "ano": 2005,
+      "disponivel": true
+  },
+  {
+      "id": 19,
+      "titulo": "O Nome do Vento",
+      "autor": "Patrick Rothfuss",
+      "ano": 2007,
+      "disponivel": false
+  },
+  {
+      "id": 20,
+      "titulo": "A Revolução dos Bichos",
+      "autor": "George Orwell",
+      "ano": 1945,
+      "disponivel": true
+  },
+  {
+      "id": 21,
+      "titulo": "O Ciclo da Fundação",
+      "autor": "Isaac Asimov",
+      "ano": 1953,
+      "disponivel": true
+  },
+  {
+      "id": 22,
+      "titulo": "O Conto da Aia",
+      "autor": "Margaret Atwood",
+      "ano": 1985,
+      "disponivel": true
+  },
+  {
+      "id": 23,
+      "titulo": "O Jogo do Exterminador",
+      "autor": "Orson Scott Card",
+      "ano": 1985,
+      "disponivel": false
+  },
+  {
+      "id": 24,
+      "titulo": "A Máquina do Tempo",
+      "autor": "H.G. Wells",
+      "ano": 1895,
+      "disponivel": true
+  },
+  {
+      "id": 25,
+      "titulo": "A Torre Negra: O Pistoleiro",
+      "autor": "Stephen King",
+      "ano": 1982,
+      "disponivel": true
+  },
+  {
+      "id": 26,
+      "titulo": "O Sol é para Todos",
+      "autor": "Harper Lee",
+      "ano": 1960,
+      "disponivel": false
+  },
+  {
+      "id": 27,
+      "titulo": "A Bússola de Ouro",
+      "autor": "Philip Pullman",
+      "ano": 1995,
+      "disponivel": true
+  },
+  {
+      "id": 28,
+      "titulo": "Coração de Aço",
+      "autor": "Brandon Sanderson",
+      "ano": 2013,
+      "disponivel": true
+  },
+  {
+      "id": 29,
+      "titulo": "Mistborn: O Império Final",
+      "autor": "Brandon Sanderson",
+      "ano": 2006,
+      "disponivel": false
+  }
 ]
