@@ -7,7 +7,7 @@ let livros = [];
 //loop do programa principal
 
 //loop do programa principal
-while(true){
+while (true) {
     console.log(`Biblioteca JS`);
     console.log(`
     --------------------------
@@ -23,18 +23,40 @@ while(true){
     --------------------------
     `);
 
-    const opcao = parseInt(prompt("Digite a opcao desejada: "));
+    const opcao = parseInt(prompt("Digite a opção desejada: "), 10);
 
-    if(opcao == 0){ break; }
-    if(opcao == 1){ adicionarLivro()}
-    if(opcao == 2){ livros.length > 0 ? removerLivro() : console.log("Nao existem livros cadastrados");}
-    if(opcao == 3){ livros.length > 0 ? atualizarLivro() : console.log("Nao existem livros cadastrados");}
-    if(opcao == 4){ livros.length > 0 ? visualizarLivros() : console.log("Nao existem livros cadastrados");}
-    if(opcao == 5){ livros.length > 0 ? alugarLivro() : console.log("Nao existem livros cadastrados");}
-    if(opcao == 6){ livros.length > 0 ? devolverLivro() : console.log("Nao existem livros cadastrados");}
-    if(opcao == 7){ livros.length > 0 ? salvarLivros() : console.log("Nao existem livros cadastrados");}
-    if(opcao == 8){ carregarLivros(); }
+    switch (opcao) {
+        case 0:
+            return;
+        case 1:
+            adicionarLivro();
+            break;
+        case 2:
+            livros.length > 0 ? removerLivro() : console.log("Não existem livros cadastrados.");
+            break;
+        case 3:
+            livros.length > 0 ? atualizarLivro() : console.log("Não existem livros cadastrados.");
+            break;
+        case 4:
+            livros.length > 0 ? visualizarLivros() : console.log("Não existem livros cadastrados.");
+            break;
+        case 5:
+            livros.length > 0 ? alugarLivro() : console.log("Não existem livros cadastrados.");
+            break;
+        case 6:
+            livros.length > 0 ? devolverLivro() : console.log("Não existem livros cadastrados.");
+            break;
+        case 7:
+            livros.length > 0 ? salvarLivros() : console.log("Não existem livros cadastrados.");
+            break;
+        case 8:
+            carregarLivros();
+            break;
+        default:
+            console.log("Opção inválida.");
+    }
 }
+
 
 
 // Funcoes auxiliares
@@ -46,6 +68,8 @@ function carregarLivros() {
         const data = fs.readFileSync('livros.json', 'utf8');
         livros = JSON.parse(data);
         console.log("Livros carregados com sucesso.");
+    }else {
+        console.log("Nenhum arquivo de livros encontrado.");
     }
     
 }
@@ -62,7 +86,11 @@ function adicionarLivro(){
     const id = livros.length ? livros[livros.length - 1].id + 1 : 1;
     const titulo = prompt("Digite o titulo: ");
     const autor = prompt("Digite o autor: ");
-    const ano = parseInt(prompt("Digite o ano da obra: ")); //adicionar verificador para ver se apenas numero NaN
+    const ano = parseInt(prompt("Digite o ano da obra: "));
+    if (isNaN(ano)) {
+        console.log("Ano inválido. Por favor, tente novamente.");
+        return;
+    }
     const disponivel = true;
 
     const livro = {id: id, titulo: titulo, autor: autor, ano: ano, disponivel};
@@ -72,7 +100,7 @@ function adicionarLivro(){
 
 // Funcao para remover livro da lista usuarios
 function removerLivro(){
-    const id = parseInt(prompt("Digite o id do livro a ser removido: "));
+    const id = parseInt(prompt("Digite o id do livro a ser removido: "), 10);
     const indice = livros.findIndex(livro => livro.id === id);
     if (indice !== -1) {
         livros.splice(indice, 1);
@@ -84,7 +112,7 @@ function removerLivro(){
 
 // Funcao atualizar livro na lista
 function atualizarLivro(){
-    const id = parseInt(prompt("Digite o id do livro a ser alterado: "));
+    const id = parseInt(prompt("Digite o id do livro a ser alterado: "), 10);
     const livro = livros.find(livro => livro.id === id);
     if(livro){
         console.log(`Informacoes atuais: ID: ${livro.id} | TITULO: ${livro.titulo} | AUTOR: ${livro.autor} | ANO: ${livro.ano} | DISPONIVEL: ${livro.disponivel ? "Disponivel" : "Alugado"}`);
@@ -108,7 +136,12 @@ function atualizarLivro(){
             livro.autor = prompt("Digite o novo Autor: ");
             console.log(`Autor do livro alterado para ${livro.autor}`);
         }else if(propASerAlterada === 3){
-            livro.ano = parseInt(prompt("Digite novo ano: "));
+            const novoAno = parseInt(prompt("Digite o novo ano: "), 10);
+            if (isNaN(novoAno)) {
+                console.log("Ano inválido. Por favor, tente novamente.");
+                return;
+            }
+            livro.ano = novoAno;
             console.log(`Ano do livro alterado para ${livro.ano}`);
         }else if(propASerAlterada === 4){
             return;
@@ -164,7 +197,7 @@ function visualizarLivros(disponiveis = true){
 //funcao para devolver livro
 function devolverLivro(){
     visualizarLivros(false);
-    const livroADevolver = parseInt(prompt("ID da obra que deseja devolver: "));
+    const livroADevolver = parseInt(prompt("ID da obra que deseja devolver: "), 10);
     for(livro of livros){
         if(livro.id === livroADevolver && livro.disponivel === false){
             livro.disponivel = true;
@@ -176,7 +209,7 @@ function devolverLivro(){
 //Funcao alugar livro
 function alugarLivro(){
     visualizarLivros();
-    const livroASerAlugado = parseInt(prompt("ID do livro que deseja alugar: "))
+    const livroASerAlugado = parseInt(prompt("ID do livro que deseja alugar: "), 10);
     for(livro of livros){
         if(livro.id === livroASerAlugado && livro.disponivel === true){
             livro.disponivel = false;
