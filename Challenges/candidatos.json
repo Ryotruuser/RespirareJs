@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "nome": "Ze Gotinha",
+    "votos": 0
+  },
+  {
+    "id": 2,
+    "nome": "Harry Potter",
+    "votos": 5
+  },
+  {
+    "id": 3,
+    "nome": "Sherlock Holmes",
+    "votos": 0
+  },
+  {
+    "id": 4,
+    "nome": "Lara Croft",
+    "votos": 0
+  },
+  {
+    "id": 5,
+    "nome": "Indiana Jones",
+    "votos": 0
+  }
+]
