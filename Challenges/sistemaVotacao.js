@@ -5,31 +5,42 @@ let candidatos = [];
 
 // Função para carregar Candidatos de um arquivo JSON
 function carregarCandidatos() {
-    if (fs.existsSync('candidatos.json')) {
-        const data = fs.readFileSync('candidatos.json', 'utf8');
-        candidatos = JSON.parse(data);
-        console.log("candidatos carregados com sucesso.");
-    }else {
-        console.log("Nenhum arquivo de candidatos encontrado.");
+    try {
+        if (fs.existsSync('candidatos.json')) {
+            const data = fs.readFileSync('candidatos.json', 'utf8');
+            candidatos = JSON.parse(data);
+            console.log("Candidatos carregados com sucesso.");
+        } else {
+            console.log("Nenhum arquivo de candidatos encontrado.");
+        }
+    } catch (error) {
+        console.error("Erro ao carregar candidatos:", error);
     }
-    
 }
 
 // Função para salvar Candidatos em um arquivo JSON
 function salvarCandidatos() {
-    const data = JSON.stringify(candidatos, null, 2);
-    fs.writeFileSync('candidatos.json', data);
-    console.log("Candidatos exportados com sucesso para 'candidatos.json'");
+    try {
+        const data = JSON.stringify(candidatos, null, 2);
+        fs.writeFileSync('candidatos.json', data);
+        console.log("Candidatos exportados com sucesso para 'candidatos.json'");
+    } catch (error) {
+        console.error("Erro ao salvar candidatos:", error);
+    }
 }
 
 function adicionarCandidato(){
+    const nome = prompt("Digite o nome: ").trim();
+    if (!nome) {
+        console.log("Nome não pode ser vazio.");
+        return;
+    }
     const id = candidatos.length ? candidatos[candidatos.length - 1].id + 1 : 1;
-    const nome = prompt("Digite o nome: ");
-
     const candidato = {id: id, nome: nome, votos: 0};
     candidatos.push(candidato);
-    console.log("candidato cadastrado com sucesso.");
+    console.log("Candidato cadastrado com sucesso.");
 }
+
 
 function removerCandidato(){
     const id = parseInt(prompt("Digite o id do candidato a ser removido: "), 10);
@@ -43,32 +54,36 @@ function removerCandidato(){
 }
 
 function visualizarCandidatos(){
-    for(candidato of candidatos){
+    candidatos.forEach(candidato => {
         console.log(`
         ID: ${candidato.id}
         NOME: ${candidato.nome}
         VOTOS: ${candidato.votos}
         `);
-    };
+    });
 }
+
 
 function registrarVoto(){
     const id = parseInt(prompt("Digite o id do candidato a ser votado: "), 10);
-    for(candidato of candidatos){
-        if(candidato.id === id){
-            if(candidato.votos >= 5){
-                exibirVencedor();
-            }else{
-                candidato.votos += 1;
-            }
-            
+    const candidato = candidatos.find(candidato => candidato.id === id);
+    if (candidato) {
+        candidato.votos += 1;
+        if (candidato.votos >= 5) {
+            exibirVencedor();
+        } else {
+            console.log(`Voto registrado para ${candidato.nome}.`);
         }
+    } else {
+        console.log("ID do candidato não encontrado.");
     }
 }
 
+
 function exibirVencedor(){
-   for(candidato of candidatos){
-        if(candidato.votos >= 5){
+    let vencedor = false;
+    candidatos.forEach(candidato => {
+        if (candidato.votos >= 5) {
             console.log(`
             ==============================
                      VENCEDOR 
@@ -78,9 +93,14 @@ function exibirVencedor(){
             VOTOS: ${candidato.votos}
             ===============================
             `);
+            vencedor = true;
         }
+    });
+    if (!vencedor) {
+        console.log("Nenhum candidato atingiu o número de votos necessários para vencer.");
     }
 }
+
 
 
 //loop
