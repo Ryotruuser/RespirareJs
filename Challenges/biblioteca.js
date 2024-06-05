@@ -1,10 +1,8 @@
 const fs = require('fs');
+const funcoesUteis = require('./funcoesUteis');
 const prompt = require("prompt-sync")({ sigint: true }); 
 
 let livros = [];
-
-
-//loop do programa principal
 
 //loop do programa principal
 while (true) {
@@ -32,7 +30,7 @@ while (true) {
             adicionarLivro();
             break;
         case 2:
-            livros.length > 0 ? removerLivro() : console.log("Não existem livros cadastrados.");
+            livros.length > 0 ? funcoesUteis.remover(livros) : console.log("Não existem livros cadastrados.");
             break;
         case 3:
             livros.length > 0 ? atualizarLivro() : console.log("Não existem livros cadastrados.");
@@ -47,38 +45,14 @@ while (true) {
             livros.length > 0 ? devolverLivro() : console.log("Não existem livros cadastrados.");
             break;
         case 7:
-            livros.length > 0 ? salvarLivros() : console.log("Não existem livros cadastrados.");
+            livros.length > 0 ? funcoesUteis.salvar(livros, 'livros') : console.log("Não existem livros cadastrados.");
             break;
         case 8:
-            carregarLivros();
+            funcoesUteis.carregar(livros, 'livros');
             break;
         default:
             console.log("Opção inválida.");
     }
-}
-
-
-
-// Funcoes auxiliares
-
-
-// Função para carregar livros de um arquivo JSON
-function carregarLivros() {
-    if (fs.existsSync('livros.json')) {
-        const data = fs.readFileSync('livros.json', 'utf8');
-        livros = JSON.parse(data);
-        console.log("Livros carregados com sucesso.");
-    }else {
-        console.log("Nenhum arquivo de livros encontrado.");
-    }
-    
-}
-
-// Função para salvar livros em um arquivo JSON
-function salvarLivros() {
-    const data = JSON.stringify(livros, null, 2);
-    fs.writeFileSync('livros.json', data);
-    console.log("Livros exportados com sucesso para 'livros.json'");
 }
 
 // Funcao para adicionar livro na lista de usuarios
@@ -96,18 +70,6 @@ function adicionarLivro(){
     const livro = {id: id, titulo: titulo, autor: autor, ano: ano, disponivel};
     livros.push(livro);
     console.log("Livro cadastrado com sucesso.");
-}
-
-// Funcao para remover livro da lista usuarios
-function removerLivro(){
-    const id = parseInt(prompt("Digite o id do livro a ser removido: "), 10);
-    const indice = livros.findIndex(livro => livro.id === id);
-    if (indice !== -1) {
-        livros.splice(indice, 1);
-        console.log("Livro removido com sucesso! ");
-    } else {
-        console.log("ID do livro nao encontrado.");
-    }
 }
 
 // Funcao atualizar livro na lista
