@@ -1,23 +1,8 @@
 const fs = require('fs');
+const funcoesUteis = require('./funcoesUteis');
 const prompt = require("prompt-sync")({ sigint: true }); 
 
 let usuarios = [];
-
-// Função para carregar usuários de um arquivo JSON
-function carregarUsuarios() {
-    if (fs.existsSync('usuarios.json')) {
-        const data = fs.readFileSync('usuarios.json', 'utf8');
-        usuarios = JSON.parse(data);
-        console.log("Usuarios carregados com sucesso.");
-    }
-}
-
-// Função para salvar usuários em um arquivo JSON
-function salvarUsuarios() {
-    const data = JSON.stringify(usuarios, null, 2);
-    fs.writeFileSync('usuarios.json', data);
-    console.log("Usuarios exportados com sucesso para 'usuarios.json'");
-}
 
 // Funcao para adicionar usuario na lista de usuarios
 function adicionarUsuario(){
@@ -29,20 +14,6 @@ function adicionarUsuario(){
     const  usuario = {id: id, nome: nome, email: email, idade: idade};
     usuarios.push(usuario);
     console.log("Usuario cadastrado com sucesso.");
-}
-
-// Funcao para remover usuario da lista usuarios
-function removerUsuario(){
-    const id = parseInt(prompt("Digite o id do usuario a ser removido: "));
-    let usuario;
-    let indice = usuarios.indexOf(usuario);
-    for(usuario of usuarios){
-        if(usuario.id === id){
-            usuario = usuario;
-        }
-    }
-    usuarios.splice(indice, 1);
-    console.log("Usuario removido com sucesso! ");
 }
 
 // Funcao atualizar usuario na lista
@@ -97,7 +68,6 @@ function visualizarUsuarios(){
     };
 }
 
-
 //loop do programa principal
 while(true){
     console.log(`Gerenciador de usuarios`);
@@ -117,9 +87,9 @@ while(true){
 
     if(opcao == 0){ break; }
     if(opcao == 1){ adicionarUsuario()}
-    if(opcao == 2){ usuarios.length > 0 ? removerUsuario() : console.log("Nao existem usuarios cadastrados"); }
+    if(opcao == 2){ usuarios.length > 0 ? funcoesUteis.remover(usuarios) : console.log("Nao existem usuarios cadastrados"); }
     if(opcao == 3){ usuarios.length > 0 ? atualizarUsuario() : console.log("Nao existem usuarios cadastrados");}
     if(opcao == 4){ usuarios.length > 0 ? visualizarUsuarios() : console.log("Nao existem usuarios cadastrados"); }
-    if(opcao == 5){ usuarios.length > 0 ? salvarUsuarios() : console.log("Nao existem usuarios cadastrados");}
-    if(opcao == 6){ carregarUsuarios(); }
+    if(opcao == 5){ usuarios.length > 0 ? funcoesUteis.salvar(usuarios, 'usuarios') : console.log("Nao existem usuarios cadastrados");}
+    if(opcao == 6){ funcoesUteis.carregar(usuarios, 'usuarios'); }
 }
