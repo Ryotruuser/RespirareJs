@@ -1,4 +1,5 @@
 const fs = require('fs');
+const trataErros = require('./erros/funcoesErro');
 const caminhoArquivo = process.argv;
 const link = caminhoArquivo[2];
 
@@ -7,11 +8,8 @@ fs.readFile(link, 'utf-8', (erro, texto) => {
         if(erro) throw erro;
         contarPalavras(texto);
     }catch(erro){
-        if(erro.code === "ENOENT") console.log("Verifique a extensao do arquivo.")
-
-    }
-    
-
+        trataErros(erro);
+  }
 })
 
 function contarPalavras(texto){
