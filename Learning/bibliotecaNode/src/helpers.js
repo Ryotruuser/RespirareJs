@@ -10,8 +10,6 @@ function montaSaidaArquivo(listaPalavras){
     })
 
     return textoFinal;
-    
 }
-
 
 export {montaSaidaArquivo};

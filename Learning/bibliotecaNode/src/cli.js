@@ -60,20 +60,3 @@ async function criaESalvaArquivo(listaPalavras, endereco){
         throw erro;
     }
 }
-
-// // funcao assincrona mais antiga
-// function criaESalvaArquivo(listaPalavras, endereco){
-//     const arquivoNovo = `${endereco}/resultado.txt`;
-//     const textoPalavras = JSON.stringify(listaPalavras);
-//     fs.promises.writeFile(arquivoNovo, textoPalavras)
-//       .then(() => {
-//         console.log("Arquivo criado.");
-//       })
-//       .catch((erro) => {
-//         throw erro;
-//       })
-//       .finally(() => {
-//         console.log("Operacao finalizada");
-//       })
-    
-// }
