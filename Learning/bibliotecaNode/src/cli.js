@@ -15,14 +15,32 @@ fs.readFile(link, 'utf-8', (erro, texto) => {
   }
 })
 
-async function criaESalvaArquivo(listaPalavras, endereco){
+// funcao assincrona mais nova
+// async function criaESalvaArquivo(listaPalavras, endereco){
+//     const arquivoNovo = `${endereco}/resultado.txt`;
+//     const textoPalavras = JSON.stringify(listaPalavras);
+//     try{
+//         await fs.promises.writeFile(arquivoNovo, textoPalavras);
+//         console.log("Arquivo criado.");
+
+//     } catch(erro){
+//         throw erro;
+//     }
+// }
+
+// funcao assincrona mais antiga
+function criaESalvaArquivo(listaPalavras, endereco){
     const arquivoNovo = `${endereco}/resultado.txt`;
     const textoPalavras = JSON.stringify(listaPalavras);
-    try{
-        await fs.promises.writeFile(arquivoNovo, textoPalavras);
+    fs.promises.writeFile(arquivoNovo, textoPalavras)
+      .then(() => {
         console.log("Arquivo criado.");
-
-    } catch(erro){
+      })
+      .catch((erro) => {
         throw erro;
-    }
+      })
+      .finally(() => {
+        console.log("Operacao finalizada");
+      })
+    
 }
