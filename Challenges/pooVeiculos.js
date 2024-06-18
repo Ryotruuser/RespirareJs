@@ -41,13 +41,15 @@ class Moto extends Veiculo {
 
 }
 
-// instanciando
+// instanciando carro
 
 const novoCarro = new Carro("Fiat", "Uno", "1997");
 console.log(novoCarro);
 novoCarro.abastecer("gasolina");
 novoCarro.detalhes();
 
+
+//instanciando moto
 
 const novaMoto = new Moto("Yamaha", "150", "2017", 250);
 console.log(novaMoto);
