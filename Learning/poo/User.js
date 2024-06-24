@@ -27,11 +27,11 @@ export default class User {
     }
 
     get role(){
-        this.#role;
+        return this.#role;
     }
 
     get ativo(){
-        this.#ativo;
+        return this.#ativo;
     }
 
     //setters
