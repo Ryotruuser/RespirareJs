@@ -14,12 +14,25 @@ class CalcController{
     }
 
     initialize(){
+
+        this.setDisplayDateTime()
+
         setInterval(() => {
 
-            this.displayDate = this.currentDate.toLocaleDateString(this.#locale);
-            this.displayTime = this.currentDate.toLocaleTimeString(this.#locale);
+            this.setDisplayDateTime()
 
         }, 1000);
+    }
+
+    setDisplayDateTime(){
+
+        this.displayDate = this.currentDate.toLocaleDateString(this.#locale, {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        });
+        this.displayTime = this.currentDate.toLocaleTimeString(this.#locale);
+
     }
 
 
