@@ -149,8 +149,6 @@ class CalcController{
 
     }
 
-
-
     addEventListenerAll(element, events, fn){
 
         events.split(" ").forEach(event => {
@@ -448,6 +446,12 @@ class CalcController{
         return this.#displayCalcEl.innerHTML;
     }
     set displayCalc(value){
+
+        if(value.toString().length > 10){
+            this.setError();
+            return false;
+        }
+
         this.#displayCalcEl.innerHTML = value;
     }
 
