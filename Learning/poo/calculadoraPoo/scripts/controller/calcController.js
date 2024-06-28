@@ -5,7 +5,12 @@ class CalcController{
     #timeEl
     #locale
     #operation
+    #lastOperator
+    #lastNumber
     constructor(){
+
+        this.#lastOperator = "";
+        this.#lastNumber = "";
 
         this.#operation = [];
         this.#locale = "pt-BR";
@@ -77,23 +82,37 @@ class CalcController{
 
             this.calc();
 
-            console.log(this.#operation);
-
-
         }
         
+    }
+
+    getResult(){
+
+        return eval(this.#operation.join(""));
     }
 
     calc(){
 
         let last = "";
+        this.#lastOperator = this.getLastItem();
+
+        if(this.#operation.length < 3){
+
+            let firstItem = this.#operation[0];
+            this.#operation = [firstItem, this.#lastOperator, this.#lastNumber];
+
+        }
 
         if(this.#operation.length > 3){
             let last = this.#operation.pop();
+            this.#lastNumber = this.getResult();
+        }else if(this.#operation.length == 3){
+
+            this.#lastNumber = this.getLastItem(false);
+
         }
 
-        
-        let result = eval(this.#operation.join(""));
+        let result = this.getResult();
 
         if(last == "%"){
 
@@ -113,17 +132,30 @@ class CalcController{
         this.setLastNumberToDisplay();
     }
 
-    setLastNumberToDisplay(){
-
-        let lastNumber;
+    getLastItem(isOperator = true){
+        let lastItem;
         for(let i = this.#operation.length - 1; i >= 0; i--){
 
-            if(!this.isOperator(this.#operation[i])){
-                lastNumber = this.#operation[i];
-                break;
-            }
+           if(this.isOperator(this.#operation[i]) == isOperator){
+                    lastItem = this.#operation[i];
+                    break;
+                }
+            
 
         }
+
+        if(!lastItem){
+
+            lastItem = (isOperator) ? this.#lastOperator : this.#lastNumber;
+
+        }
+
+        return lastItem;
+    }
+
+    setLastNumberToDisplay(){
+
+        let lastNumber = this.getLastItem(false);
 
         if(!lastNumber) lastNumber = 0;
 
