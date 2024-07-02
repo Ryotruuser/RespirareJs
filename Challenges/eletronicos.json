@@ -1,0 +1,642 @@
+[
+  {
+    "nome": "EarBuds",
+    "preco": 240,
+    "quantidade": 100
+  },
+  {
+    "nome": "Xbox Series S",
+    "preco": 1800,
+    "quantidade": 50
+  },
+  {
+    "nome": "Smartphone Galaxy S20",
+    "preco": 3500,
+    "quantidade": 80
+  },
+  {
+    "nome": "Notebook Dell XPS 13",
+    "preco": 6000,
+    "quantidade": 30
+  },
+  {
+    "nome": "Smart TV LG 55\"",
+    "preco": 3500,
+    "quantidade": 20
+  },
+  {
+    "nome": "Apple Watch Series 6",
+    "preco": 2500,
+    "quantidade": 40
+  },
+  {
+    "nome": "Tablet Samsung Galaxy Tab S7",
+    "preco": 2800,
+    "quantidade": 60
+  },
+  {
+    "nome": "Monitor Gamer ASUS ROG Swift",
+    "preco": 4500,
+    "quantidade": 15
+  },
+  {
+    "nome": "Câmera Canon EOS R5",
+    "preco": 12000,
+    "quantidade": 10
+  },
+  {
+    "nome": "Console PlayStation 5",
+    "preco": 4500,
+    "quantidade": 25
+  },
+  {
+    "nome": "Mouse Logitech G Pro Wireless",
+    "preco": 400,
+    "quantidade": 120
+  },
+  {
+    "nome": "Teclado mecânico Corsair K95 RGB",
+    "preco": 800,
+    "quantidade": 90
+  },
+  {
+    "nome": "Headset HyperX Cloud II",
+    "preco": 500,
+    "quantidade": 110
+  },
+  {
+    "nome": "Roteador TP-Link Archer AX6000",
+    "preco": 1000,
+    "quantidade": 70
+  },
+  {
+    "nome": "Impressora Epson EcoTank L3150",
+    "preco": 1500,
+    "quantidade": 45
+  },
+  {
+    "nome": "Monitor LG UltraWide 34\"",
+    "preco": 3000,
+    "quantidade": 30
+  },
+  {
+    "nome": "SSD Samsung 970 Evo Plus 1TB",
+    "preco": 800,
+    "quantidade": 85
+  },
+  {
+    "nome": "HD Externo Seagate Backup Plus 4TB",
+    "preco": 600,
+    "quantidade": 65
+  },
+  {
+    "nome": "Câmera de Segurança Xiaomi Mi Home",
+    "preco": 200,
+    "quantidade": 150
+  },
+  {
+    "nome": "Caixa de Som Bluetooth JBL Charge 4",
+    "preco": 700,
+    "quantidade": 55
+  },
+  {
+    "nome": "Smartphone iPhone 12 Pro",
+    "preco": 5000,
+    "quantidade": 35
+  },
+  {
+    "nome": "Notebook Lenovo ThinkPad X1 Carbon",
+    "preco": 7000,
+    "quantidade": 18
+  },
+  {
+    "nome": "Mousepad SteelSeries QcK Prism",
+    "preco": 150,
+    "quantidade": 200
+  },
+  {
+    "nome": "Webcam Logitech C920 HD Pro",
+    "preco": 300,
+    "quantidade": 80
+  },
+  {
+    "nome": "Console Nintendo Switch",
+    "preco": 2500,
+    "quantidade": 40
+  },
+  {
+    "nome": "Monitor Dell UltraSharp U3419W",
+    "preco": 4000,
+    "quantidade": 12
+  },
+  {
+    "nome": "Fone de Ouvido Sony WH-1000XM4",
+    "preco": 1500,
+    "quantidade": 50
+  },
+  {
+    "nome": "Teclado Razer Huntsman Elite",
+    "preco": 900,
+    "quantidade": 75
+  },
+  {
+    "nome": "Projetor Epson Home Cinema 4010",
+    "preco": 8000,
+    "quantidade": 8
+  },
+  {
+    "nome": "Smart TV Samsung QLED 65\"",
+    "preco": 6000,
+    "quantidade": 15
+  },
+  {
+    "nome": "Drone DJI Mavic Air 2",
+    "preco": 3500,
+    "quantidade": 20
+  },
+  {
+    "nome": "Impressora Brother HL-L2350DW",
+    "preco": 600,
+    "quantidade": 40
+  },
+  {
+    "nome": "Monitor Gamer Acer Predator X27",
+    "preco": 10000,
+    "quantidade": 5
+  },
+  {
+    "nome": "Câmera GoPro Hero 9 Black",
+    "preco": 1800,
+    "quantidade": 25
+  },
+  {
+    "nome": "Mouse sem Fio Microsoft Arc",
+    "preco": 120,
+    "quantidade": 180
+  },
+  {
+    "nome": "Teclado Logitech G Pro X",
+    "preco": 600,
+    "quantidade": 100
+  },
+  {
+    "nome": "Roteador ASUS RT-AX86U",
+    "preco": 800,
+    "quantidade": 60
+  },
+  {
+    "nome": "Caixa de Som Bose SoundLink Revolve+",
+    "preco": 900,
+    "quantidade": 30
+  },
+  {
+    "nome": "Smartphone OnePlus 9 Pro",
+    "preco": 4500,
+    "quantidade": 35
+  },
+  {
+    "nome": "Notebook HP Spectre x360",
+    "preco": 5500,
+    "quantidade": 20
+  },
+  {
+    "nome": "Teclado Corsair K70 RGB MK.2",
+    "preco": 400,
+    "quantidade": 110
+  },
+  {
+    "nome": "Monitor Philips 276E8VJSB 27\"",
+    "preco": 1500,
+    "quantidade": 22
+  },
+  {
+    "nome": "HD Externo WD Elements 2TB",
+    "preco": 400,
+    "quantidade": 50
+  },
+  {
+    "nome": "Câmera de Segurança D-Link DCS-8000LH",
+    "preco": 150,
+    "quantidade": 120
+  },
+  {
+    "nome": "Caixa de Som Bluetooth Sony SRS-XB43",
+    "preco": 800,
+    "quantidade": 42
+  },
+  {
+    "nome": "Smart TV LG OLED 55\"",
+    "preco": 8000,
+    "quantidade": 10
+  },
+  {
+    "nome": "Monitor AOC Agon AG352UCG6 35\"",
+    "preco": 3000,
+    "quantidade": 18
+  },
+  {
+    "nome": "Fone de Ouvido JBL Tune 500BT",
+    "preco": 300,
+    "quantidade": 90
+  },
+  {
+    "nome": "Projetor BenQ MH535FHD",
+    "preco": 2500,
+    "quantidade": 15
+  },
+  {
+    "nome": "Smart TV TCL 50\" 4K",
+    "preco": 2500,
+    "quantidade": 20
+  },
+  {
+    "nome": "Drone DJI Mini 2",
+    "preco": 2000,
+    "quantidade": 30
+  },
+  {
+    "nome": "Impressora Canon PIXMA G3110",
+    "preco": 700,
+    "quantidade": 28
+  },
+  {
+    "nome": "Monitor Samsung Odyssey G9 49\"",
+    "preco": 10000,
+    "quantidade": 8
+  },
+  {
+    "nome": "Câmera Nikon D850",
+    "preco": 12000,
+    "quantidade": 5
+  },
+  {
+    "nome": "Mousepad Corsair MM300",
+    "preco": 100,
+    "quantidade": 200
+  },
+  {
+    "nome": "Webcam Microsoft LifeCam HD-3000",
+    "preco": 150,
+    "quantidade": 80
+  },
+  {
+    "nome": "Console Xbox One X",
+    "preco": 2500,
+    "quantidade": 30
+  },
+  {
+    "nome": "Monitor Alienware AW2521H",
+    "preco": 3500,
+    "quantidade": 12
+  },
+  {
+    "nome": "Fone de Ouvido Sennheiser HD 600",
+    "preco": 1200,
+    "quantidade": 22
+  },
+  {
+    "nome": "Teclado HyperX Alloy Origins",
+    "preco": 500,
+    "quantidade": 60
+  },
+  {
+    "nome": "Projetor Epson PowerLite 1781W",
+    "preco": 3000,
+    "quantidade": 10
+  },
+  {
+    "nome": "Smart TV Sony LED 75\"",
+    "preco": 10000,
+    "quantidade": 5
+  },
+  {
+    "nome": "Monitor LG 27GL850-B 27\"",
+    "preco": 2500,
+    "quantidade": 18
+  },
+  {
+    "nome": "HD Externo Seagate Expansion 1TB",
+    "preco": 300,
+    "quantidade": 50
+  },
+  {
+    "nome": "Câmera de Segurança TP-Link Tapo C200",
+    "preco": 250,
+    "quantidade": 110
+  },
+  {
+    "nome": "Caixa de Som JBL Flip 5",
+    "preco": 600,
+    "quantidade": 40
+  },
+  {
+    "nome": "Smartphone Xiaomi Mi 11",
+    "preco": 3500,
+    "quantidade": 35
+  },
+  {
+    "nome": "Notebook ASUS ZenBook Duo UX481FL",
+    "preco": 6000,
+    "quantidade": 20
+  },
+  {
+    "nome": "Teclado Razer BlackWidow Elite",
+    "preco": 800,
+    "quantidade": 75
+  },
+  {
+    "nome": "Monitor Dell S2721DGF 27\"",
+    "preco": 3000,
+    "quantidade": 22
+  },
+  {
+    "nome": "Impressora HP DeskJet Plus 4120",
+    "preco": 400,
+    "quantidade": 35
+  },
+  {
+    "nome": "Monitor MSI Optix MAG271CQR 27\"",
+    "preco": 2500,
+    "quantidade": 15
+  },
+  {
+    "nome": "Mouse sem Fio Logitech MX Master 3",
+    "preco": 400,
+    "quantidade": 80
+  },
+  {
+    "nome": "Webcam Razer Kiyo",
+    "preco": 300,
+    "quantidade": 60
+  },
+  {
+    "nome": "Console PlayStation 4 Pro",
+    "preco": 2000,
+    "quantidade": 25
+  },
+  {
+    "nome": "Monitor BenQ EW3270U 32\"",
+    "preco": 4000,
+    "quantidade": 12
+  },
+  {
+    "nome": "Fone de Ouvido Beats Studio3 Wireless",
+    "preco": 1500,
+    "quantidade": 50
+  },
+  {
+    "nome": "Teclado Corsair K95 RGB Platinum",
+    "preco": 900,
+    "quantidade": 40
+  },
+  {
+    "nome": "Projetor BenQ TK850",
+    "preco": 6000,
+    "quantidade": 8
+  },
+  {
+    "nome": "Smart TV LG NanoCell 65\"",
+    "preco": 7000,
+    "quantidade": 10
+  },
+  {
+    "nome": "Monitor Alienware AW3420DW 34\"",
+    "preco": 5000,
+    "quantidade": 18
+  },
+  {
+    "nome": "HD Externo Toshiba Canvio Basics 2TB",
+    "preco": 250,
+    "quantidade": 40
+  },
+  {
+    "nome": "Câmera de Segurança Xiaomi Mi Home 360º",
+    "preco": 300,
+    "quantidade": 120
+  },
+  {
+    "nome": "Caixa de Som Bluetooth Harman Kardon Onyx Studio 6",
+    "preco": 1000,
+    "quantidade": 35
+  },
+  {
+    "nome": "Smartphone Samsung Galaxy Note 20 Ultra",
+    "preco": 6000,
+    "quantidade": 15
+  },
+  {
+    "nome": "Notebook Dell Inspiron 15 5000",
+    "preco": 4000,
+    "quantidade": 20
+  },
+  {
+    "nome": "Teclado Logitech G613",
+    "preco": 600,
+    "quantidade": 100
+  },
+  {
+    "nome": "Monitor Philips 242B9T 24\"",
+    "preco": 800,
+    "quantidade": 22
+  },
+  {
+    "nome": "Impressora Epson EcoTank L3150",
+    "preco": 900,
+    "quantidade": 30
+  },
+  {
+    "nome": "Monitor Samsung Odyssey G7 32\"",
+    "preco": 3500,
+    "quantidade": 8
+  },
+  {
+    "nome": "Mouse sem Fio Apple Magic Mouse 2",
+    "preco": 600,
+    "quantidade": 80
+  },
+  {
+    "nome": "Webcam Logitech BRIO Ultra HD Pro",
+    "preco": 700,
+    "quantidade": 40
+  },
+  {
+    "nome": "Console Xbox Series X",
+    "preco": 4500,
+    "quantidade": 10
+  },
+  {
+    "nome": "Monitor Acer Predator XB273K 27\"",
+    "preco": 3000,
+    "quantidade": 18
+  },
+  {
+    "nome": "Fone de Ouvido Bose QuietComfort 35 II",
+    "preco": 1200,
+    "quantidade": 22
+  },
+  {
+    "nome": "Teclado Razer Ornata Chroma",
+    "preco": 500,
+    "quantidade": 60
+  },
+  {
+    "nome": "Projetor Epson Home Cinema 5050UB",
+    "preco": 10000,
+    "quantidade": 5
+  },
+  {
+    "nome": "Smart TV Sony OLED 55\"",
+    "preco": 9000,
+    "quantidade": 10
+  },
+  {
+    "nome": "Monitor LG UltraFine 4K 24\"",
+    "preco": 1500,
+    "quantidade": 22
+  },
+  {
+    "nome": "HD Externo Samsung T5 1TB",
+    "preco": 400,
+    "quantidade": 50
+  },
+  {
+    "nome": "Câmera de Segurança Nest Cam Outdoor",
+    "preco": 350,
+    "quantidade": 110
+  },
+  {
+    "nome": "Caixa de Som Bluetooth Bose SoundLink Micro",
+    "preco": 400,
+    "quantidade": 40
+  },
+  {
+    "nome": "Smartphone OnePlus 8 Pro",
+    "preco": 4000,
+    "quantidade": 35
+  },
+  {
+    "nome": "Notebook MSI GS66 Stealth",
+    "preco": 7000,
+    "quantidade": 20
+  },
+  {
+    "nome": "Teclado HyperX Alloy FPS RGB",
+    "preco": 400,
+    "quantidade": 110
+  },
+  {
+    "nome": "Monitor ASUS ROG Swift PG279Q 27\"",
+    "preco": 2500,
+    "quantidade": 22
+  },
+  {
+    "nome": "Impressora Canon PIXMA G6020",
+    "preco": 500,
+    "quantidade": 35
+  },
+  {
+    "nome": "Monitor Dell U3417W 34\"",
+    "preco": 3000,
+    "quantidade": 15
+  },
+  {
+    "nome": "Mousepad Razer Goliathus Extended Chroma",
+    "preco": 250,
+    "quantidade": 80
+  },
+  {
+    "nome": "Webcam Logitech C922 Pro",
+    "preco": 300,
+    "quantidade": 60
+  },
+  {
+    "nome": "Console Nintendo Switch Lite",
+    "preco": 1500,
+    "quantidade": 25
+  },
+  {
+    "nome": "Monitor Samsung Odyssey G9 49\"",
+    "preco": 6000,
+    "quantidade": 12
+  },
+  {
+    "nome": "Fone de Ouvido AKG K701",
+    "preco": 1000,
+    "quantidade": 22
+  },
+  {
+    "nome": "Teclado Corsair K65 RGB Mini",
+    "preco": 300,
+    "quantidade": 60
+  },
+  {
+    "nome": "Projetor BenQ TH671ST",
+    "preco": 2500,
+    "quantidade": 15
+  },
+  {
+    "nome": "Smart TV LG OLED 65\"",
+    "preco": 8000,
+    "quantidade": 10
+  },
+  {
+    "nome": "Monitor Alienware AW3821DW 38\"",
+    "preco": 8000,
+    "quantidade": 18
+  },
+  {
+    "nome": "HD Externo Seagate Backup Plus Slim 2TB",
+    "preco": 250,
+    "quantidade": 40
+  },
+  {
+    "nome": "Câmera de Segurança Arlo Pro 3",
+    "preco": 450,
+    "quantidade": 120
+  },
+  {
+    "nome": "Caixa de Som Bluetooth JBL GO 3",
+    "preco": 200,
+    "quantidade": 40
+  },
+  {
+    "nome": "Smartphone Xiaomi Mi 10T Pro",
+    "preco": 3000,
+    "quantidade": 35
+  },
+  {
+    "nome": "Notebook Acer Predator Helios 300",
+    "preco": 5000,
+    "quantidade": 20
+  },
+  {
+    "nome": "Teclado Logitech G413 Carbon",
+    "preco": 600,
+    "quantidade": 100
+  },
+  {
+    "nome": "Monitor Dell P2720DC 27\"",
+    "preco": 800,
+    "quantidade": 22
+  },
+  {
+    "nome": "Impressora HP LaserJet Pro M404dw",
+    "preco": 700,
+    "quantidade": 30
+  },
+  {
+    "nome": "Monitor MSI Optix MAG322CQR 32\"",
+    "preco": 3000,
+    "quantidade": 15
+  },
+  {
+    "nome": "Mouse sem Fio Logitech G305",
+    "preco": 200,
+    "quantidade": 80
+  },
+  {
+    "nome": "Webcam Razer Kiyo Pro",
+    "preco": 400,
+    "quantidade": 60
+  }
+]
