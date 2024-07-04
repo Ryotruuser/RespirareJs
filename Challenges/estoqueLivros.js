@@ -49,6 +49,18 @@ class Livro{
         return `\nTitulo: ${this.titulo}\nAutor(a): ${this.autor}\nQuantidade: ${this.quantidade}\n`;
     }
 
+    toJSON() {
+        return {
+            titulo: this.#titulo,
+            autor: this.#autor,
+            quantidade: this.#quantidade,
+        };
+    }
+
+    static fromJSON(obj) {
+        return new Livro(obj.titulo, obj.autor, obj.quantidade);
+    }
+
 }
 
 class SistemaEstoque{
@@ -62,9 +74,16 @@ class SistemaEstoque{
     }
 
 
-    adicionarLivro(livro){
-        this.estoqueLivros.push(livro);
-        return `"${livro.titulo}" adicionado com sucesso.`
+    adicionarLivro(novoLivro){
+        let livros = this.estoqueLivros;
+        for(livro of livros){
+            if(livro.titulo == novoLivro){
+                return `${livro.titulo} ja existe no estoque`;
+            }else{
+                this.estoqueLivros.push(livro);
+                return `"${livro.titulo}" adicionado com sucesso.`
+            }
+        } 
     }
 
     removerLivro(livro){
@@ -107,4 +126,5 @@ class SistemaEstoque{
 const biblioteca = new SistemaEstoque;
 
 console.log(biblioteca.carregarLivros("estoqueLivrosCheio"));
-console.log(biblioteca.listarLivros())
+console.log(biblioteca.listarLivros());
+console.log(biblioteca.salvarLivros("estoqueLivrosDoar"));
