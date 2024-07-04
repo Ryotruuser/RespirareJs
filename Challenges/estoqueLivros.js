@@ -44,13 +44,42 @@ class Livro{
     }
 
     apresentar(){
-        return `Titulo: ${this.titulo}\nAutor(a): ${this.autor}\nQuantidade: ${this.quantidade}`;
+        return `\nTitulo: ${this.titulo}\nAutor(a): ${this.autor}\nQuantidade: ${this.quantidade}\n`;
     }
 
 }
 
+class SistemaEstoque{
+    #estoqueLivros
+    constructor(){
+        this.#estoqueLivros = [];
+    }
+
+    get estoqueLivros(){
+        return this.#estoqueLivros;
+    }
+
+
+    adicionarLivro(livro){
+        this.estoqueLivros.push(livro);
+        return `"${livro.titulo}" adicionado com sucesso.`
+    }
+
+    removerLivro(livro){
+        this.estoqueLivros.pop(livro);
+        return `"${livro.titulo}" removido com sucesso.`
+    }
+
+    listarLivros(){
+        return this.estoqueLivros.map(livro => livro.apresentar()).join("\n");
+    }
+
+}
+
+
+const biblioteca = new SistemaEstoque;
 const l1 = new Livro("Harry Potter Death Hollows pt1", "J.K Rowling");
-console.log(l1.apresentar());
 console.log(l1.adicionarUnidade(5));
-console.log(l1.removerUnidade(3));
-console.log(l1.apresentar());
+
+console.log(biblioteca.adicionarLivro(l1));
+console.log(biblioteca.listarLivros())
