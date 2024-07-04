@@ -42,10 +42,10 @@ class Empresa{
     demitir(funcionario){
         const contratado = this.funcionarios.find(colaborador => funcionario == colaborador.nome);
         if(contratado){
-            for(let contratados of this.funcionarios){
-                if(funcionario == contratados.nome){
-                    this.funcionarios.splice(contratados, 1);
-                    return `Funcionario ${funcionario} demitido`;
+            for(let i = 0; i < this.funcionarios.length; i++){
+                if(funcionario == this.funcionarios[i].nome){
+                    this.funcionarios.splice(i, 1);
+                    return `Funcionário ${funcionario} demitido`;
                 }
             }
         }else{
@@ -73,5 +73,5 @@ console.log(empresa.contratar(f1));
 console.log(empresa.contratar(f2));
 console.log(empresa.contratar(f3));
 console.log(empresa.contratar(f4));
-console.log(empresa.demitir("Mauro Sousa"))
+console.log(empresa.demitir("Josefina Farias"))
 console.log(empresa.listarFuncionarios());
