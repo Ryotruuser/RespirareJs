@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 class Funcionario{
     constructor(nome, cargo, salario, saldo = 0){
         this.nome = nome;
@@ -58,7 +60,47 @@ class Empresa{
     }
 }
 
-const empresa = new Empresa("Xcom");
+class SistemaRH{
+
+    constructor(empresa){
+        this.empresa = empresa;
+    }
+
+    depositarSalario(){
+        const funcionariosPagos = this.empresa.funcionarios.forEach(funcionario => {
+            funcionario.saldo += funcionario.salario;
+        });
+        return `Salario pago com sucesso.`;
+    }
+
+    salvarFolhaPagamento(nomeArquivo){
+        const data = JSON.stringify(this.empresa.funcionarios, null, 2);
+        fs.writeFileSync(`${nomeArquivo}.json`, data);
+        return `Dados exportados com sucesso para '${nomeArquivo}.json'`;
+    }
+
+    // carregarFolhaPagamento(nomeArquivo){
+    //     const arquivo = `${nomeArquivo}.json`;
+    //     if (fs.existsSync(arquivo)) {
+    //         const data = fs.readFileSync(arquivo, 'utf8');
+    //         const objetosCarregados = JSON.parse(data);
+    //         this.empresa.funcionarios.length = 0; // Limpa o array original
+    //         objetosCarregados.forEach(obj => {
+    //             const funcionario = new funcionario(obj.nome, obj.cargo, obj.salario);
+    //             this.empresa.funcionarios.push(funcionario); // Adiciona os produtos carregados ao array
+    //         });
+    //         return `${this.empresa.funcionarios.length} objetos carregados com sucesso.`;
+    //     } else {
+    //         return "Nenhum arquivo encontrado.";
+    //     }
+    // }
+
+
+}
+
+
+const Xcom = new Empresa("Xcom");
+const XcomRH = new SistemaRH(Xcom);
 
 const f1 = new Funcionario("Mauro Souza", "Empresario", 5600);
 const f2 = new Funcionario("Jorge Freitas", "Gerente", 9800);
@@ -69,9 +111,14 @@ const f4 = new Funcionario("Mauro Souza", "Vice Presidente", 12400);
 console.log(f1.apresentar());
 
 //contratados
-console.log(empresa.contratar(f1));
-console.log(empresa.contratar(f2));
-console.log(empresa.contratar(f3));
-console.log(empresa.contratar(f4));
-console.log(empresa.demitir("Josefina Farias"))
-console.log(empresa.listarFuncionarios());
+console.log(Xcom.contratar(f1));
+console.log(Xcom.contratar(f2));
+console.log(Xcom.contratar(f3));
+console.log(Xcom.contratar(f4));
+// console.log(empresa.demitir("Josefina Farias"))
+console.log(Xcom.listarFuncionarios());
+console.log(XcomRH.depositarSalario())//mes1
+console.log(XcomRH.depositarSalario())//mes2
+console.log(f1.consultarSaldo())
+console.log(f2.consultarSaldo())
+console.log(XcomRH.salvarFolhaPagamento("folhaPagamentos2024"))

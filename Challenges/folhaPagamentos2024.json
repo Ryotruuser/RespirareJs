@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "Mauro Souza",
+    "cargo": "Empresario",
+    "salario": 5600,
+    "saldo": 11200
+  },
+  {
+    "nome": "Jorge Freitas",
+    "cargo": "Gerente",
+    "salario": 9800,
+    "saldo": 19600
+  },
+  {
+    "nome": "Josefina Farias",
+    "cargo": "Vice Presidente",
+    "salario": 12400,
+    "saldo": 24800
+  }
+]
