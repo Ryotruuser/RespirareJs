@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 class Livro{
     #titulo
     #autor    
@@ -74,12 +76,35 @@ class SistemaEstoque{
         return this.estoqueLivros.map(livro => livro.apresentar()).join("\n");
     }
 
+    carregarLivros(nomeArquivo){
+        const arquivo = `${nomeArquivo}.json`;
+        if (fs.existsSync(arquivo)) {
+            const data = fs.readFileSync(arquivo, 'utf8');
+            const objetosCarregados = JSON.parse(data);
+            this.estoqueLivros.length = 0; // Limpa o array original
+            objetosCarregados.forEach(obj => {
+                const livro = new Livro(obj.titulo, obj.autor, obj.quantidade);
+                this.estoqueLivros.push(livro); // Adiciona os produtos carregados ao array
+            });
+            return `${this.estoqueLivros.length} objetos carregados com sucesso.`;
+        } else {
+            return "Nenhum arquivo encontrado.";
+        }
+    }
+
+
+    salvarLivros(nomeArquivo){
+        const data = JSON.stringify(this.estoqueLivros, null, 2);
+        fs.writeFileSync(`${nomeArquivo}.json`, data);
+        return `Dados exportados com sucesso para '${nomeArquivo}.json'`;
+    
+    }
+
+
 }
 
 
 const biblioteca = new SistemaEstoque;
-const l1 = new Livro("Harry Potter Death Hollows pt1", "J.K Rowling");
-console.log(l1.adicionarUnidade(5));
 
-console.log(biblioteca.adicionarLivro(l1));
+console.log(biblioteca.carregarLivros("estoqueLivrosCheio"));
 console.log(biblioteca.listarLivros())
