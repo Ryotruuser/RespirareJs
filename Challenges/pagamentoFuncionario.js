@@ -32,7 +32,7 @@ class Empresa{
     contratar(funcionario){
         const contratado = this.funcionarios.find(colaborador => colaborador.nome === funcionario.nome);
         if(contratado){
-            return `Funcionario ja e nosso colaborador!`;
+            return `Colaborador(a) ${contratado.nome} ja faz parte da familia ${this.nome}!`;
         }
         this.funcionarios.push(funcionario);
         return `Bem vindo a nossa empresa ${funcionario.nome} !`;
@@ -40,14 +40,16 @@ class Empresa{
 
 
     demitir(funcionario){
-        const contratado = this.funcionarios.find(funcionario => funcionario.nome === contratado.nome);
+        const contratado = this.funcionarios.find(colaborador => funcionario == colaborador.nome);
         if(contratado){
             for(let contratados of this.funcionarios){
-                if(funcionario.nome == contratados.nome){
-                    let indexFuncionario = indexOf(contratados)
-                    this.funcionarios.splice(indexFuncionario, 1);
+                if(funcionario == contratados.nome){
+                    this.funcionarios.splice(contratados, 1);
+                    return `Funcionario ${funcionario} demitido`;
                 }
             }
+        }else{
+            return `Funcionario ${funcionario} nao faz parte da nossa empresa.`;
         }
     }
 
@@ -58,12 +60,18 @@ class Empresa{
 
 const empresa = new Empresa("Xcom");
 
-const f1 = new Funcionario("Mauro", "Empresario", 5600);
-const f2 = new Funcionario("Jorge", "Gerente", 9800);
-const f3 = new Funcionario("Josefina", "Vice Presidente", 12400);
+const f1 = new Funcionario("Mauro Souza", "Empresario", 5600);
+const f2 = new Funcionario("Jorge Freitas", "Gerente", 9800);
+const f3 = new Funcionario("Josefina Farias", "Vice Presidente", 12400);
+const f4 = new Funcionario("Mauro Souza", "Vice Presidente", 12400);
+
+//Mauro autonomo
 console.log(f1.apresentar());
 
+//contratados
 console.log(empresa.contratar(f1));
 console.log(empresa.contratar(f2));
 console.log(empresa.contratar(f3));
+console.log(empresa.contratar(f4));
+console.log(empresa.demitir("Mauro Sousa"))
 console.log(empresa.listarFuncionarios());
