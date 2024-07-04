@@ -8,5 +8,15 @@
     "titulo": "Alem do Bem e do Mal",
     "autor": "Nietzsche",
     "quantidade": 5
+  },
+  {
+    "titulo": "Harry Potter e o Prisioneiro de Azkaban",
+    "autor": "J.K ROWLING",
+    "quantidade": 3
+  },
+  {
+    "titulo": "Crepusculo dos Idolos",
+    "autor": "Nietzsche",
+    "quantidade": 25
   }
 ]

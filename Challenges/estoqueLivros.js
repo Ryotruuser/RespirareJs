@@ -75,15 +75,13 @@ class SistemaEstoque{
 
 
     adicionarLivro(novoLivro){
-        let livros = this.estoqueLivros;
-        for(livro of livros){
-            if(livro.titulo == novoLivro){
-                return `${livro.titulo} ja existe no estoque`;
-            }else{
-                this.estoqueLivros.push(livro);
-                return `"${livro.titulo}" adicionado com sucesso.`
+        for (const livro of this.#estoqueLivros) {
+            if (livro.titulo === novoLivro.titulo) {
+                return `${livro.titulo} já existe no estoque`;
             }
-        } 
+        }
+        this.#estoqueLivros.push(novoLivro);
+        return `"${novoLivro.titulo}" adicionado com sucesso.`;
     }
 
     removerLivro(livro){
@@ -118,13 +116,16 @@ class SistemaEstoque{
         return `Dados exportados com sucesso para '${nomeArquivo}.json'`;
     
     }
-
-
 }
 
 
 const biblioteca = new SistemaEstoque;
+const livroRepetido = new Livro("Alem do Bem e do Mal","Nietzsche", 25 );
+const livroNiet2 = new Livro("Crepusculo dos Idolos", "Nietzsche", 25);
 
 console.log(biblioteca.carregarLivros("estoqueLivrosCheio"));
-console.log(biblioteca.listarLivros());
+console.log(biblioteca.adicionarLivro(new Livro("Harry Potter e o Prisioneiro de Azkaban", "J.K ROWLING", 3)));
+console.log(biblioteca.adicionarLivro(livroRepetido));
+console.log(biblioteca.adicionarLivro(livroNiet2));
 console.log(biblioteca.salvarLivros("estoqueLivrosDoar"));
+console.log(biblioteca.listarLivros());
