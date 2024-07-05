@@ -11,11 +11,11 @@ class Pet{
 
     apresentar(){
         if(this.tipo == "cao"){
-            return `Au au sou o ${this.nome} um caozinho muito esperto de ${this.idade} anos, sou ${this.genero == "M" ? "menino" : "menina"}`;
+            return `Au au me chamo ${this.nome} um caozinho muito esperto de ${this.idade} meses, sou ${this.genero == "M" ? "menino" : "menina"}`;
         }else if(this.tipo == "gato"){
-            return `Meow sou o ${this.nome} um gatinho muito agitado de ${this.idade} anos, sou ${this.genero == "M" ? "menino" : "menina"}`;
+            return `Meow me chamo ${this.nome} um felino muito agitado de ${this.idade} meses, sou ${this.genero == "M" ? "menino" : "menina"}`;
         }else{
-            return `Brr sou o ${this.nome} um passaro muito sapeca de ${this.idade} anos, sou ${this.genero == "M" ? "menino" : "menina"}`;
+            return `Brr me chamo ${this.nome} sou uma ave muito sapeca de ${this.idade} meses, sou ${this.genero == "M" ? "menino" : "menina"}`;
         }
     }
 
@@ -29,23 +29,36 @@ class Pet{
 }
 
 class Pessoa{
-    constructor(nome, idade, pets = []){
+    constructor(nome, idade){
         this.nome = nome;
         this.idade = idade;
-        this.pets = pets;
+        this.pets = [];
     }
 
     listarPets(){
-        this.pets.map(pet => {
-            pet.apresentar();
-        })
+        if(this.pets.length === 0){
+            return `Nao possuo pets.`
+        }
+        return this.pets.map(pet => pet.apresentar()).join("\n");
+    
     }
 
+    adotarPet(pet){
+        this.pets.push(pet);
+        return `parabens voce adotou um pet do tipo ${pet.tipo}`;
+    }
 
     apresentar(){
-        return `Meu nome e ${this.nome} tenho ${this.idade} anos e essa e minha familia:\n${this.listarPets()}`;
+        return `\nMeu nome e ${this.nome} tenho ${this.idade} anos e possuo ${this.pets.length} pets e essa e minha familia:\n${this.listarPets()}`;
     }
 }
 
-const cao = new Pet("Tchutchucao", "cao", 2, "F");
-console.log(cao.apresentar());
+const humano = new Pessoa("Janderson", 25)
+const cao = new Pet("Tchutchucao", "cao", 2, "M");
+const gato = new Pet("Shiro", "gato", 5, "M");
+const ave = new Pet("Flor", "ave", 14, "F");
+console.log(humano.apresentar());
+console.log(humano.adotarPet(cao));
+console.log(humano.adotarPet(ave));
+console.log(humano.adotarPet(gato));
+console.log(humano.apresentar());
