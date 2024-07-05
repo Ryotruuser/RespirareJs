@@ -10,11 +10,5 @@
     "cargo": "Gerente",
     "salario": 9800,
     "saldo": 19600
-  },
-  {
-    "nome": "Josefina Farias",
-    "cargo": "Vice Presidente",
-    "salario": 12400,
-    "saldo": 24800
   }
 ]

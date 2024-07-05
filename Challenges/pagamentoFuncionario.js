@@ -79,22 +79,22 @@ class SistemaRH{
         return `Dados exportados com sucesso para '${nomeArquivo}.json'`;
     }
 
-    // carregarFolhaPagamento(nomeArquivo){
-    //     const arquivo = `${nomeArquivo}.json`;
-    //     if (fs.existsSync(arquivo)) {
-    //         const data = fs.readFileSync(arquivo, 'utf8');
-    //         const objetosCarregados = JSON.parse(data);
-    //         this.empresa.funcionarios.length = 0; // Limpa o array original
-    //         objetosCarregados.forEach(obj => {
-    //             const funcionario = new funcionario(obj.nome, obj.cargo, obj.salario);
-    //             this.empresa.funcionarios.push(funcionario); // Adiciona os produtos carregados ao array
-    //         });
-    //         return `${this.empresa.funcionarios.length} objetos carregados com sucesso.`;
-    //     } else {
-    //         return "Nenhum arquivo encontrado.";
-    //     }
-    // }
-
+    carregarFolhaPagamento(nomeArquivo) {
+        const arquivo = `${nomeArquivo}.json`;
+        console.log(`Tentando carregar arquivo: ${arquivo}`);
+        if (fs.existsSync(arquivo)) {
+            const data = fs.readFileSync(arquivo, 'utf8');
+            const objetosCarregados = JSON.parse(data);
+            this.empresa.funcionarios.length = 0; // Limpa o array original
+            objetosCarregados.forEach(obj => {
+                const funcionario = new Funcionario(obj.nome, obj.cargo, obj.salario, obj.saldo); // Crie o funcionário usando os dados do JSON
+                this.empresa.funcionarios.push(funcionario); // Adiciona os funcionários carregados ao array
+            });
+            return `${this.empresa.funcionarios.length} objetos carregados com sucesso.`;
+        } else {
+            return `Nenhum arquivo encontrado com o nome '${arquivo}'.`;
+        }
+    }
 
 }
 
@@ -115,10 +115,14 @@ console.log(Xcom.contratar(f1));
 console.log(Xcom.contratar(f2));
 console.log(Xcom.contratar(f3));
 console.log(Xcom.contratar(f4));
-// console.log(empresa.demitir("Josefina Farias"))
-console.log(Xcom.listarFuncionarios());
-console.log(XcomRH.depositarSalario())//mes1
-console.log(XcomRH.depositarSalario())//mes2
+console.log(Xcom.demitir("Josefina Farias"))
+console.log(XcomRH.depositarSalario());
+console.log(XcomRH.depositarSalario());
 console.log(f1.consultarSaldo())
 console.log(f2.consultarSaldo())
 console.log(XcomRH.salvarFolhaPagamento("folhaPagamentos2024"))
+console.log(XcomRH.carregarFolhaPagamento("folhaPagamentos2024"))
+console.log(Xcom.listarFuncionarios())
+
+console.log(f1.consultarSaldo())
+console.log(f2.consultarSaldo())
