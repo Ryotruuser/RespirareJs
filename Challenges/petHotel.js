@@ -53,12 +53,60 @@ class Pessoa{
     }
 }
 
+
+class petRoyale{
+    constructor(){
+        this.quartosDisponiveis = 2;
+        this.petsAlojados = [];
+    }
+
+    checkIn(pet){
+        if(!this.quartosDisponiveis > 0){
+            return `Nao possuimos acomodacoes para ${pet.nome} no momento`;
+        }
+        this.quartosDisponiveis -= 1;
+        this.petsAlojados.push(pet);
+        return `${pet.nome} acomodado com sucesso restam ${this.quartosDisponiveis} quartos disponiveis.`;
+    }
+
+    checkOut(petNome){
+        const hospedado = this.petsAlojados.find(hospede => petNome == hospede.nome);
+        if(hospedado){
+            this.quartosDisponiveis += 1;
+            for(let i = 0; i < this.petsAlojados.length; i++){
+                if(petNome == this.petsAlojados[i].nome){
+                    this.petsAlojados.splice(i, 1);
+                    return `Volte sempre ${petNome}!`;
+                }
+            }
+        }else{
+            return `Nenhum hospede chamado ${petNome} no momento.`;
+        }
+    }
+
+
+
+
+}
+
+
+
+
+
+
 const humano = new Pessoa("Janderson", 25)
 const cao = new Pet("Tchutchucao", "cao", 2, "M");
 const gato = new Pet("Shiro", "gato", 5, "M");
 const ave = new Pet("Flor", "ave", 14, "F");
+const petHotel = new petRoyale();
 console.log(humano.apresentar());
 console.log(humano.adotarPet(cao));
 console.log(humano.adotarPet(ave));
 console.log(humano.adotarPet(gato));
 console.log(humano.apresentar());
+
+console.log(petHotel.checkIn(cao));
+console.log(petHotel.checkIn(ave));
+console.log(petHotel.checkIn(gato));
+console.log(petHotel.checkOut("Flor"));
+console.log(petHotel.checkIn(gato));
