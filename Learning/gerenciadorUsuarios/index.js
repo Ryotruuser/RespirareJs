@@ -4,9 +4,7 @@ let user = {};
 
 function addLine(dataUser){
 
-    let tr = document.createElement("tr");
-
-    tr.innerHTML = `
+    document.getElementById("table-users").innerHTML = `
     <tr>
         <td>
         <img src=${!dataUser.photo ? "dist/img/user1-128x128.jpg" : dataUser.photo} alt="User Image" class="img-circle img-sm"></td>
@@ -20,9 +18,6 @@ function addLine(dataUser){
         </td>
     </tr>
     `;
-
-    document.getElementById("table-users").appendChild(tr);
-
 }
 
 document.getElementById("form-user-create").addEventListener("submit", e => {
