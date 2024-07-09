@@ -4,6 +4,9 @@ let user = {};
 
 function addLine(dataUser){
 
+
+    console.log(dataUser);
+
     document.getElementById("table-users").innerHTML = `
     <tr>
         <td>
@@ -39,6 +42,18 @@ document.getElementById("form-user-create").addEventListener("submit", e => {
         }
     }) 
     
-    addLine(user);
+
+    var objectUser = new User(
+        user.name, 
+        user.gender, 
+        user.birth, 
+        user.country, 
+        user.email, 
+        user.password, 
+        user.photo, 
+        user.admin 
+    );
+
+    addLine(objectUser);
 
 })
