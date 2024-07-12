@@ -7,6 +7,7 @@ class User {
     #password
     #photo
     #admin
+    #register
     constructor(name,gender,birth,country,email,password,photo, admin){
         
         this.#name = name;
@@ -17,6 +18,7 @@ class User {
         this.#password = password;
         this.#photo = photo;
         this.#admin = admin;
+        this.#register = new Date();
     }
 
     get name(){
@@ -73,6 +75,13 @@ class User {
     }
     set admin(admin){
         return this.#admin = admin;
+    }
+
+    get register(){
+        return this.#register;
+    }
+    set register(register){
+        return this.#register = register;
     }
 
 }
