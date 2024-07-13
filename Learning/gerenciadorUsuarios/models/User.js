@@ -1,87 +1,79 @@
 class User {
-    #name
-    #gender
-    #birth
-    #country
-    #email
-    #password
-    #photo
-    #admin
-    #register
+
     constructor(name,gender,birth,country,email,password,photo, admin){
         
-        this.#name = name;
-        this.#gender = gender;
-        this.#birth = birth;
-        this.#country = country;
-        this.#email = email;
-        this.#password = password;
-        this.#photo = photo;
-        this.#admin = admin;
-        this.#register = new Date();
+        this._name = name;
+        this._gender = gender;
+        this._birth = birth;
+        this._country = country;
+        this._email = email;
+        this._password = password;
+        this._photo = photo;
+        this._admin = admin;
+        this._register = new Date();
     }
 
     get name(){
-        return this.#name;
+        return this._name;
     }
     set name(name){
-        return this.#name = name;
+        return this._name = name;
     }
 
     get gender(){
-        return this.#gender;
+        return this._gender;
     }
     set gender(gender){
-        return this.#gender = gender;
+        return this._gender = gender;
     }
 
     get birth(){
-        return this.#birth;
+        return this._birth;
     }
     set birth(birth){
-        return this.#birth = birth;
+        return this._birth = birth;
     }
     
     get country(){
-        return this.#country;
+        return this._country;
     }
     set country(country){
-        return this.#country = country;
+        return this._country = country;
     }
 
     get email(){
-        return this.#email;
+        return this._email;
     }
     set email(email){
-        return this.#email = email;
+        return this._email = email;
     }
 
     get password(){
-        return this.#password;
+        return this._password;
     }
     set password(password){
-        return this.#password = password;
+        return this._password = password;
     }
 
     get photo(){
-        return this.#photo;
+        return this._photo;
     }
     set photo(photo){
-        return this.#photo = photo;
+        return this._photo = photo;
     }
 
     get admin(){
-        return this.#admin;
+        return this._admin;
     }
     set admin(admin){
-        return this.#admin = admin;
+        return this._admin = admin;
     }
 
     get register(){
-        return this.#register;
+        return this._register;
     }
     set register(register){
-        return this.#register = register;
+        return this._register = register;
     }
 
 }
