@@ -1,3 +1,7 @@
+import { carregar, salvar, adicionar, remover, visualizar } from './funcoesUteis.js';
+import promptSync from 'prompt-sync';
+
+const prompt = promptSync({ sigint: true });
 class Anime{
     constructor(nome) {
         this.nome = nome;
@@ -18,21 +22,33 @@ class Anime{
     }
 
     finalizarTemporada(){
+        const fimTemp = `${this.tempCont} temporada, ${this.status}`;
         if(this.episodios > 10){
             this.status = "Finalizado";
-            this.temporada.push(this.detalhes);
+            this.temporada.push(fimTemp);
         }else{
             this.status = "Dropado";
+            this.temporada.push(fimTemp);
+            
         }   
     }
 
     detalhar(){
-        return console.log(`\n${this.tempCont} Temporada\nAnime: ${this.nome}\nEpisodios assistidos: ${this.episodios}\nStatus: ${this.status}\n`);
+        return console.log(`\n${this.tempCont} Temporada\nAnime: ${this.nome}\nEpisodios assistidos: ${this.episodios}\nStatus: ${this.status}\nTemporada: ${this.temporada}`);
     }
 }
 
-
+const listaAnimes = [];
 const naruto = new Anime("Naruto");
 naruto.adicionarEpisodios(1);
 naruto.finalizarTemporada();
-naruto.detalhar();
+
+while(true){
+    console.log("\nOrdenador de Animes\n");
+    console.log( `[1] Listar Animes\n[2] Gerenciar Animes\n[3] Sair\n`);
+    const opcao = prompt("Digite sua opcao: ");
+    console.log("\n")
+    break;
+
+
+};
