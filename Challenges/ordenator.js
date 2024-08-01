@@ -39,16 +39,44 @@ class Anime{
 }
 
 const listaAnimes = [];
-const naruto = new Anime("Naruto");
-naruto.adicionarEpisodios(1);
-naruto.finalizarTemporada();
 
 while(true){
+    //carregar JSON
+    // carregar(listaAnimes, "animes");
+
+    //main menu
     console.log("\nOrdenador de Animes\n");
     console.log( `[1] Listar Animes\n[2] Gerenciar Animes\n[3] Sair\n`);
     const opcao = prompt("Digite sua opcao: ");
     console.log("\n")
-    break;
+    
+    //opcoes
+    if(opcao == 1){
+        visualizar(listaAnimes);
+    }else if(opcao == 2){
+        console.clear();
+        let vdd = true;
+        while(vdd){
+            console.log("\nGerenciador de animes\n");
+            console.log("[1] Adicionar Anime\n[2] Contabilizar episodio\n[3] Alterar status\n[4] Finalizar temporada\n[5] Voltar");
+            const op = parseInt(prompt("Digite sua opcao: "));
+            console.log("\n");
 
+            //switch
+            switch (op) {
+                case 1:
+                    console.log("heheXD");
+                    break;
+                
+                case 5:
+                    vdd = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }else if(opcao == 3){
+        break;
+    }
 
 };

@@ -54,7 +54,12 @@ export function remover(listaObjeto) {
 
 // Função para visualizar toda a lista de objetos 
 export function visualizar(listaObjeto) {
-    for (const objeto of listaObjeto) {
-        console.log(objeto);
+    if(listaObjeto.length != 0){
+        for (const objeto of listaObjeto) {
+            console.log(objeto);
+        }
+    }else{
+        console.log("Ainda nao existem elementos na lista.");
     }
+    
 }
