@@ -15,4 +15,4 @@ export default class User{
 
 const novoUser = new User("Renan", "r@r.com", "2024-01-01");
 
-console.log(novoUser.exibirInfo());
+// console.log(novoUser.exibirInfo());
