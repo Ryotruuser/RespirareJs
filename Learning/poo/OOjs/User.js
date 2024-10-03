@@ -12,13 +12,59 @@ export default class User{
         this.#ativo = ativo;
     }
 
+    //getters
+    get nome(){
+        return this.#nome;
+    }
+
+    get email(){
+        return this.#email;
+    }
+
+    get nascimento(){
+        return this.#nascimento;
+    }
+
+    get role(){
+        return this.#role;
+    }
+
+    get ativo(){
+        return this.#ativo;
+    }
+
+    //setters
+
+    set nome(nome){
+        if(nome === ""){
+            throw new Error("Formato de nome digitado nao e valido");
+        }
+        return this.#nome = nome;
+    }
+
+    set email(email){
+        return this.#email = email;
+    }
+
+    set nascimento(nascimento){
+        return this.#nascimento = nascimento;
+    }
+
+    set role(role){
+        return this.#role = role;
+    }
+
+    set ativo(ativo){
+        return this.#ativo = ativo;
+    }
+
     #montaObjUser(){
         return ({
-            nome: this.#nome,
-            email: this.#email,
-            nascimento: this.#nascimento,
-            role: this.#role,
-            ativo: this.#ativo,
+            nome: this.nome,
+            email: this.email,
+            nascimento: this.nascimento,
+            role: this.role,
+            ativo: this.ativo,
         })
     }
 
